@@ -1,25 +1,33 @@
-<?php get_header();  ?>
-<!--<?php //get_header('personalizado'); ?>-->
-<div class="container"> <!--São eles que permitem rodar múltiplos sistemas isolados dentro de um sistema operacional real(tipo caixote)-->
-	<h1><?php single_post_title();  ?></h1> <!--deixa o titulo do conteudo maior-->
-	<div class="row"> <!--criar linha-->
-		
-		<div class="col-md-9"> <!--criar coluna com espaçamento largo-->
-			<?php 
-				if(have_posts()): the_post();
-					the_post_thumbmail('medium');//<!--aqui posso modificar o tamanho da imagem ex the_post_thumbmail('large');-->
-					the_content();
-	            endif;
-				
-			 ?>
-		</div>
-		<div class="col-md-3">
-				<?php get_sidebar(); ?>
-		</div>
+<?php  
 
-		
-	</div>
-</div>
+get_header();
 
+$main_column_size = bootstrapBasicGetMainColumnSize();
+?>
+<?php get_sidebar('left'); ?>
+					<div class="col-md-<?php echo $main_column_size;?> content-area " id="main-column">
+						<main id="main" class="site-main" role="main">
+					<?php 
+					while (have_posts()) {
+						the_post();
 
+						get_template_part('content',get_post_format());
+
+						echo "\n\n";
+
+						bootsTrapBasicPagination();
+
+						echo "\n\n";
+
+						if(comments_open() || '0' != get_comments_number()){
+							comments_template();
+						}
+
+						echo "\n\n";
+					}
+
+					 ?>		
+					 </main>				
+					</div>
+<?php get_sidebar('right');  ?>
 <?php get_footer(); ?>

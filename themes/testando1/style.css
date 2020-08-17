@@ -1,0 +1,19 @@
+/* 
+	The Name:Testando Blog
+	Theme URI:O LINK PARA ENCONTAR SEU TEMA
+	Author:Larissa Posener
+	Author URI:Link do meu GitHub
+	Description:Descriçao do seu theme
+	Version:1.0
+	license:MIT
+	tags:filmes,acao,comedia,amor
+	text domain:tema1 (apelido para o tema)
+*/
+
+
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}

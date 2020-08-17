@@ -1,14 +1,17 @@
-<?php 
-//criar funçao e adicionar as pastas bootstrap
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> </script>
+
+<?php  
+
 function my_wp_scripts(){
   wp_enqueue_style('bootstrap',
-		sprintf('%s/assets/css/bootstrap.min.css', get_template_directory_uri()));
+        sprintf('%s/assets/css/bootstrap.min.css', get_template_directory_uri()));
 
   wp_enqueue_style('style', get_stylesheet_uri());
 
   wp_enqueue_script('bootstrap',
-		sprintf('%s/assets/js/bootstrap.min.js', get_template_directory_uri()),
-		['jquery'], null, true);
+        sprintf('%s/assets/js/bootstrap.min.js', get_template_directory_uri()),
+        ['jquery'], null, true);
 
 }
 // adiocionando uma açao, ou seja,quando for executar os scripts,vai executar a funcao
@@ -20,8 +23,8 @@ set_post_thumbnail_size(120,120);
 
 
 
-
-/**
+/*
+*
  * --------------------------------------------------------------
  * criaçao de Custom Post Types - Larissa 
  * --------------------------------------------------------------

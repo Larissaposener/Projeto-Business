@@ -1,0 +1,19 @@
+<?php get_header(); ?>    
+
+<div class="container">
+	<h1>Erro 404</h1>
+	<div class="row">
+		<div class="col-md-9">
+			<p>Ops!! Esta Pagina nao existe</p>
+		</div>
+
+		
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div>
+
+		
+
+	</div>
+</div>
+<?php get_footer(); ?>
